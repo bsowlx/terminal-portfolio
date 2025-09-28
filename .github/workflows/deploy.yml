@@ -41,6 +41,10 @@ jobs:
           NEXT_TELEMETRY_DISABLED: 1
         run: npm run build:ci
 
+      # Configure GitHub Pages (required for creating deployments)
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
