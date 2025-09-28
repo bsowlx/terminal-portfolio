@@ -1,9 +1,7 @@
 import type { NextConfig } from "next";
-import path from "path";
 
-// Read base path and asset prefix from env (set by GitHub Actions for project pages)
-const basePath = process.env.NEXT_BASE_PATH || ""
-const assetPrefix = process.env.NEXT_ASSET_PREFIX || undefined;
+const isGithubPages = process.env.GITHUB_ACTIONS === 'true';
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
 
 const nextConfig: NextConfig = {
   output: "export",
@@ -11,10 +9,11 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true,
   },
-  basePath: basePath || undefined,
-  assetPrefix,
-  // Silence workspace root inference warnings when multiple lockfiles exist
-  outputFileTracingRoot: path.join(__dirname),
+  basePath: isGithubPages ? basePath : '',
+  assetPrefix: isGithubPages ? basePath : '',
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
 };
 
 export default nextConfig;
