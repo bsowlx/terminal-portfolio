@@ -1,4 +1,5 @@
 import type { NextConfig } from "next";
+import path from "path";
 
 // Read base path and asset prefix from env (set by GitHub Actions for project pages)
 const basePath = process.env.NEXT_BASE_PATH || ""
@@ -12,6 +13,8 @@ const nextConfig: NextConfig = {
   },
   basePath: basePath || undefined,
   assetPrefix,
+  // Silence workspace root inference warnings when multiple lockfiles exist
+  outputFileTracingRoot: path.join(__dirname),
 };
 
 export default nextConfig;
