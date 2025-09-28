@@ -1,26 +1,55 @@
-# Terminal Portfolio
+# 🖥️ Terminal Portfolio
 
-Minimal portfolio built with Next.js 15 and exported as a static site.
+## ✨ Features
 
-## Quick start
+- **Interactive Terminal Interface** — Type commands to navigate
+- **Command History** — Use ↑/↓ arrow keys to browse previous commands  
+- **Tab Autocomplete** — Start typing and press Tab
+- **Responsive Design** — Works on desktop and mobile
+- **GitHub Pages Ready** — Automated deployment via Actions
 
-- Requirements: Node.js 20+, npm 10+
-- Install: `npm ci` (or `npm install`)
-- Dev: `npm run dev` → http://localhost:3000
+## 🚀 Available Commands
 
-## Build
+```bash
+help      # Show all available commands
+about     # Learn about Baiastan
+skills    # View technical skills and tools
+projects  # Explore featured projects
+contact   # Get in touch
+clear     # Clear terminal output
+```
 
-- Build app: `npm run build`
-- Static export: with `output: "export"` enabled, the static site is emitted to `out/`
-- Lint: `npm run lint`
+## 🛠️ Tech Stack
 
-## Deploy (GitHub Pages)
+- **Framework:** Next.js 15 (App Router) + React 19
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS v4
+- **Deployment:** GitHub Pages (Static Export)
 
-Already wired via GitHub Actions. Pushing to `main` builds and publishes `out/` to Pages.
+## 📦 Quick Start
 
-- Project page URL: https://bsowlx.github.io/terminal-portfolio/
+```bash
+# Clone and install
+git clone https://github.com/bsowlx/terminal-portfolio.git
+cd terminal-portfolio
+npm install
 
-Notes
-- `next.config.ts` reads `NEXT_BASE_PATH` and `NEXT_ASSET_PREFIX` which the workflow sets for project pages.
-- CI uses a non-Turbopack build (`npm run build:ci`) for reliability.
-This project is configured to deploy to GitHub Pages via GitHub Actions.
+# Development
+npm run dev          # Start dev server
+npm run build        # Production build
+npm run lint         # Code linting
+```
+
+## 🎨 Customization
+
+**Personal Info:** Edit cases in `src/components/Terminal.tsx` → `handleCommand()`
+**Styling:** Modify `src/app/page.tsx` and Tailwind classes
+**New Commands:** Add cases to the switch statement and update `COMMANDS` array
+
+## 📱 Live Demo
+
+👉 **[bsowlx.github.io/terminal-portfolio](https://bsowlx.github.io/terminal-portfolio/)**
+
+---
+
+*Built with by Baiastan*
